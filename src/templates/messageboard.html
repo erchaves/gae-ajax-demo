@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% block main %}
-<div id="main">
+{% block chatSession %}
+<div id="chatSession">
     <h1>AppEngine Chat</h1>
     <div>
         <form method="post" action="/chat">
@@ -14,11 +14,20 @@
         {{ error }}
     </p>
     {% endifnotequal %}
-    <div id="chatcontent">
+    <div id="chatContent">
         <!-- -->
 
         Loading...
     </div>
 </div>
+
+{% endblock %}
+{% block footer %}
+<form mame="finishForm" action="/clearChat" method="post">
+    <div>
+        <br />
+        <button name="clearChat" type="submit" value="clear chat">clear chat</button><br />
+    </div>
+</form>
 
 {% endblock %}

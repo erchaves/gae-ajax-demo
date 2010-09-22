@@ -6,6 +6,10 @@ html, body, #outerWrap {
     height: 100%;
 }
 
+/*stops page jumping if the page is too short*/
+html {overflow-y: scroll;}
+
+
 body {
     font-family: Verdana, Helvetica, sans-serif;
     background-color: #F0F4F7;
@@ -57,6 +61,11 @@ h4{
 #innerWrap div{
     padding: 10px;
 }
+#innerWrap #main > div{
+    margin: 20px 0;
+    border: 1px solid #dddddd
+
+}
 /*use this for clearing certain divs*/
 .clear{
     clear:both;
@@ -80,6 +89,11 @@ h4{
     font-size: 0.8em;
     text-align: right;
 }
+#header #userInfo .loginLink{
+    margin: 5px 0;
+    padding: 0;
+}
+
 
 #main{
     padding: 10px;
@@ -106,4 +120,13 @@ h4{
 }
 #outro{
 
+}
+#rpcDemo input.button{
+    position: relative;
+    float: left;
+    margin: 10px;
+    font-size: 1em;
+}
+#rpcDemo .results{
+    clear: both;
 }

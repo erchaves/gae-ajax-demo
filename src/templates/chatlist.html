@@ -1,4 +1,4 @@
 {% for chat in chats %} <p>
-    {{ chat.text }} ({{ chat.user.account }})
+    {{ chat.text }} ({{ chat.user.nickname }})
     {{ chat.created|date:"D d M Y" }} </p>
 {% endfor %}

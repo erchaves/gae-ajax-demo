@@ -105,16 +105,17 @@ InstallFunction(server, 'Sample2');
 // Client functions that call a server rpc and provide a callback
 //these functions use jQuery and should be called from within a $(document).ready
 
-function doSample1() {
-    server.Sample1($('num1').value, $('num2').value, callback1);
+
+function doSample1() {    
+    server.Sample1($('#num1').attr('value'), $('#num2').attr('value'), callback1);
 }
 function callback1(response) {
-    $('result').value = response +  " numbers have been added"
+    $('#result').val("A + B = " + response);
 }
 
 function doSample2() {
-    server.Sample2($('num1').value, $('num2').value, callback2);
+    server.Sample2($('#num1').attr('value'), $('#num2').attr('value'), callback2);
 }
-function callback1(response) {
-    $('result').value = response + " numbers have been multiplied";
+function callback2(response) {
+    $('#result').val("A * B = " + response);
 }

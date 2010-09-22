@@ -16,7 +16,7 @@
     $(document).ready(function() {
 
         var updateNodes = function(){
-            updateNode( $("#chatcontent"), "/messages", false);
+            updateNode( $("#chatContent"), "/messages", false);
         };
         //do once at the start
         updateNodes();

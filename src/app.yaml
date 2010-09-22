@@ -1,5 +1,5 @@
-application: ashenproject
-version: 2
+application: gae-ajax-demo
+version: 1
 runtime: python
 api_version: 1
 
@@ -11,4 +11,4 @@ handlers:
   static_dir: js
 
 - url: /.*
-  script: ashenproj.py
+  script: gae-ajax-demo.py
