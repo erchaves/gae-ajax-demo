@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block userInfo %}
+<div id="userInfo">
+    <!--clear userInfo -->
+</div>
+{% endblock %}
+
+{% block main %}
+
+<div id="main">
+
+    <div id="loginMessage">
+        <h3>This experiment requires that you log in.</h3>
+        <p>Please use the account information provided for you by the proctor.</p>
+        <p id="loginButtonDiv">
+            <a href="{{ logUrl }}">{{ logUrl_linktext }}</a>
+        </p>
+    </div>
+
+</div> <!--end main-->
+
+{% endblock %}

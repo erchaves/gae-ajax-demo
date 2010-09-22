@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+Andrew Shen Experiment - session
+{% endblock %}
+
+{% block main %}
+
+<div id="main">
+
+    <div id="intro">
+        <p>Welcome back, {{ temptype }}</p>
+        <div id="userSummary">
+            <h4>Your user summary:</h4>
+            <ul>
+                <li><span><b>User: </b></span>{{ thisUserName }}</li>
+                <li><span><b>Completed Sessions: </b></span>{{ thisSession.index }}</li>
+                <li><span><b>Completed Questions in this session: </b></span>{{lastQuestionIndex}}</li>
+                <li><span><b>This session score: </b></span>{{thisSession.score}} <span>(would normally be hidden from user)</span></li>
+                <li><span><b>Session status: </b></span>{{ currentSessionStatusText }}</li>
+                <li><span><b>Total Score for all sessions: </b></span>{{ scoreTotal }}</li>
+
+            </ul>
+        </div>
+        <div id="instructions">
+
+        </div>
+    </div>
+
+    <div id="session">
+        <h2>Session {{thisSession.index }}</h2>
+        <div id="question">
+            <h3>Question {{thisQuestionIndex}}</script></h3>
+            <form mame="myform" action="/answer" method="post">
+                <div>
+                    <button name="real" type="submit" value="real" >yes</button>
+                    <button name="fake" type="submit" value="fake" >no</button>
+                    <button name="na" type="submit" value="na" >skip this question</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="outro" style="display: none;">
+        <p>Welcome back, {{thisUserName}}</p>
+        <div id="userSummary">
+            <h4>Your user summary:</h4>
+            <ul>
+                <li>
+                    <b>email: </b><span>{{ thisUserName }}</span>
+                </li>
+
+            </ul>
+        </div>
+        <div id="instructions">
+
+     
+
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div> <!--end main-->
+
+{% endblock %}

@@ -1,0 +1,109 @@
+
+* {
+    margin: 0;
+}
+html, body, #outerWrap {
+    height: 100%;
+}
+
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    background-color: #F0F4F7;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+
+}
+#outerWrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#innerWrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -5em; /* the bottom margin should be the negative value of the footer's height */
+    background: #F6F6F6;
+}
+#footer, .push {
+    height: 5em; /* .push must be the same height as .footer */
+    padding: 0 15px;
+}
+#footer {
+    width:100%;
+}
+/*
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+*/
+a{
+    color: #0066CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+h1{
+    font-size: 1.6em;
+}
+h2{
+    font-size: 1.3em;
+}
+h3{
+    font-size: 1.2em;
+}
+h4{
+    font-size: 0.8em;
+}
+#innerWrap div{
+    padding: 10px;
+}
+/*use this for clearing certain divs*/
+.clear{
+    clear:both;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+#header{
+    background: #BBC9D1;
+    padding: 20px 15px;
+    color: #758795;
+
+}
+
+
+#header #title{
+    float:left;
+}
+#header #userInfo {
+    float: right;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+#main{
+    padding: 10px;
+}
+#session{
+    background: #CBD9E1;
+    padding: 0;
+    margin: 10px;
+}
+#session h2{
+    margin: 5px 0 10px 0;
+}
+#question{
+    background: white;
+}
+#loginButtonDiv{
+    margin: 10px 0;
+}
+#userSummary{
+
+}
+#intro{
+
+}
+#outro{
+
+}

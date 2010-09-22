@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div id="main">
+    <h1>AppEngine Chat</h1>
+    <div>
+        <form method="post" action="/chat">
+            <input type="text" name="message" size="60" />
+            <input type="submit" value="Chat" />
+        </form>
+    </div>
+    {% ifnotequal error None %}
+    <p>
+        {{ error }}
+    </p>
+    {% endifnotequal %}
+    <div id="chatcontent">
+        <!-- -->
+
+        Loading...
+    </div>
+</div>
+
+{% endblock %}
