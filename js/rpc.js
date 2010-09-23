@@ -125,4 +125,5 @@ function doChatEntry() {
 }
 function callbackChatEntry(response) {
     $('#chatContent').trigger('update');
+    $('#chatMessage').val('').focus();
 }
