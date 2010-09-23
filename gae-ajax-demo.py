@@ -175,36 +175,31 @@ class RPCMethods:
         for arg in args:
             ints *= int(arg)
         return ints
-
-    
-class ChatHandler(webapp.RequestHandler):
-    def get(self):
-        doRender(self, 'messageboard.html')
-        
-    def post(self):
+	
+    def ChatEntry(self, * args):
         thisTestSubject = verify_test_subject()
 
         if not thisTestSubject:
             doRender(handler=self, values={}) #let the doRender default to the log in page
             return
-
-        msg = self.request.get('message')
+            
+        msg = cgi.escape(args[0]) #should just be one
+			
         if msg == '':
+            #would want to move this error message to be handled front-side
             doRender(
-                     self,
-                     'messageboard.html',
-                     {'error': 'Blank message ignored'}
-                     )
+                self,
+                'messageboard.html',
+                {'error': 'Blank message ignored'}
+            )
             return
         
         newchat = ChatMessage(user=thisTestSubject.user, text=msg)
         newchat.put();
-
-        values = {
-            'sampleParam': thisTestSubject.sampleParam - 3 #arbitrary param test
-        }
-
-        doRender(self, 'messageboard.html', values)
+        return msg
+    
+#class ChatHandler(webapp.RequestHandler):
+	#moved to 'ChatEntry' RPC above
 
 class MessagesHandler(webapp.RequestHandler):
     def get(self):
@@ -223,7 +218,7 @@ class ClearChat(webapp.RequestHandler):
 application = webapp.WSGIApplication([
                                      ('/rpc', RPCHandler),
                                      ('/messages', MessagesHandler),
-                                     ('/chat', ChatHandler),
+                                     #('/chat', ChatHandler),
                                      ('/clearChat', ClearChat),
                                      ('/', MainHandler)
 

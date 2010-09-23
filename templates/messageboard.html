@@ -4,8 +4,8 @@
 <div id="chatSession">
     <h1>AppEngine Chat</h1>
     <div>
-        <form method="post" action="/chat">
-            <input type="text" name="message" size="60" />
+        <form method="post" action="#" onsubmit="doChatEntry(); return false;">
+            <input id="chatMessage" "type="text" name="message" size="60" />
             <input type="submit" value="Chat" />
         </form>
     </div>

@@ -93,6 +93,7 @@ var server = {};
 // Insert the samples as the name of a callable method
 InstallFunction(server, 'Sample1');
 InstallFunction(server, 'Sample2');
+InstallFunction(server, 'ChatEntry');
 
 //my comments:
 //really, this just pointlessly roundabout.  I'm clearly not understanding this - why can't we wrap all the functions together?
@@ -118,4 +119,10 @@ function doSample2() {
 }
 function callback2(response) {
     $('#result').val("A * B = " + response);
+}
+function doChatEntry() {
+    server.ChatEntry( $('#chatMessage').val(), callbackChatEntry);
+}
+function callbackChatEntry(response) {
+    $('#chatContent').trigger('update');
 }
