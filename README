@@ -1,0 +1,25 @@
+Readme
+
+This is not a real project.  It's basically just a sample to practice setting up google app engine. 
+
+I wanted to post code so that I could ask people questions about it.
+So please, if you've got better solutions, or think my code sucks, let me know!
+
+My goal here is basically to figure out the best way to setup a default GAE project with ajax tools.
+
+I want to isolate functionality into quarantined sections - I don't want raw XHRs or database connections and queries scattered all over the place.
+
+I was actually very surprised to find that GAE did not already have clean real-time connectivity solutions available as an API, or at least as endorsed recommended plugins.
+
+I mean, I know that I've been spoiled by jQuery and other nice web 2.0 libraries, and I expect everything to work right out of the box; and I know that app engine is free, and who am I to complain, but I mean, it is called App engine, and it is almost 2010, and this is Google we're talking about...
+
+Basically, I was naive to think this was a 'solved problem' that someone like me with little experience shouldn't have to hack on anymore...  I looked around for a long time to figure out the best setup...  when I didn't find anything else that looked clean and reliable, I finally settled on a polling ajax solution with setInterval(lame).. 
+
+Then finally found this youtube video from this summer - basically Google says, yeah we know it sucks, and a 'fix' is coming soon.
+http://www.youtube.com/watch?v=oMXe-xK0BWA.   : They're going to release the "channel" API that will take care of real-time connectivity.
+
+What I was really looking for was a tool like http://socket.io/ (for node.js) that looks at the user's browsers and picks the best implementation whether it's web sockets, long polling, flash, whatever.
+
+I hope the channel API is something like this.
+
+In the meantime, Google, excuse my impertinence, and thanks for the free tools.  Cheers -
