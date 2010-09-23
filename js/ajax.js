@@ -20,6 +20,6 @@
         };
         //do once at the start
         updateNodes();
-        setInterval(updateNodes, 4000);
+        setInterval(updateNodes, 1500);
     });
 })(jQuery);
